@@ -40,6 +40,13 @@ class GildedRoseTest {
     }
 
     @Test
+    void test_regular_combo() {
+        regular.sellIn = 0; // degrade twice as fast (so -2)
+        regular.quality = 1; // 1 - 2 = -1 but quality should not go under 0
+        test(regular, -1, 0);
+    }
+
+    @Test
     void test_appreciating() {
         test(brie, 1, 1);
     }
@@ -54,6 +61,13 @@ class GildedRoseTest {
     void test_appreciating_also_doubled_after_sellIn() {
         brie.sellIn = 0;
         test(brie, -1, 2);
+    }
+
+    @Test
+    void test_appreciating_combo() {
+        brie.quality = 49;
+        brie.sellIn = 0;
+        test(brie, -1, 50);
     }
 
     @Test
