@@ -14,7 +14,8 @@ public class UpdateStrategyFactory {
         "Aged Brie", new AppreciatingUpdateStrategy(),
         "Elixir of the Mongoose", new DefaultUpdateStrategy(),
         "Sulfuras, Hand of Ragnaros", new LegendaryUpdateStrategy(),
-        "Backstage passes to a TAFKAL80ETC concert", new DeadlineUpdateStrategy()
+        "Backstage passes to a TAFKAL80ETC concert", new DeadlineUpdateStrategy(),
+        "Conjured Mana Cake", new ConjuredUpdateStrategy()
     );
 
     /**

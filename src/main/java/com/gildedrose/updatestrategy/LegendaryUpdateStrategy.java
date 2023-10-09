@@ -8,6 +8,9 @@ import com.gildedrose.Item;
 public class LegendaryUpdateStrategy implements UpdateStrategy {
 
     @Override
+    public void execute(Item item) {}
+
+    @Override
     public void updateQuality(Item item) {}
 
     @Override

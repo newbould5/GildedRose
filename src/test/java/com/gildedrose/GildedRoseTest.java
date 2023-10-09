@@ -11,6 +11,7 @@ class GildedRoseTest {
     Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 12, 20);
     Item brie = new Item("Aged Brie", 2, 0);
     Item legendary = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
+    Item conjured = new Item("Conjured Mana Cake", 2, 5);
 
     @Test
     void test_regular_item() {
@@ -98,6 +99,30 @@ class GildedRoseTest {
     void test_backstage_quality_0_after_sellIn() {
         backstage.sellIn = 0;
         test(backstage, -1, 0);
+    }
+
+    @Test
+    void test_conjured() {
+        test(conjured, 1, 3);
+    }
+
+    @Test
+    void test_conjured_degrades_twice_as_fast_after_sellIn() {
+        conjured.sellIn = 0;
+        test(conjured, -1, 1);
+    }
+
+    @Test
+    void test_conjured_quality_not_negative() {
+        conjured.quality = 1;
+        test(conjured, 1, 0);
+    }
+
+    @Test
+    void test_conjured_combo() {
+        conjured.sellIn = 0;
+        conjured.quality = 3;
+        test(conjured, -1, 0);
     }
 
 

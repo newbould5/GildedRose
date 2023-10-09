@@ -23,10 +23,6 @@ public class DeadlineUpdateStrategy implements UpdateStrategy {
         } else {
             item.quality++;
         }
-
-        if(item.quality > 50) {
-            item.quality = 50;
-        }
     }
 
 }
